@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Bull | ARTECH Experience</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-default">
+    
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <nav class="trigger-menu">
+        <div class="nav-container">
+            <div class="logo-text">RED BULL</div>
+            <div class="buttons">
+                <button class="trigger-btn" onclick="changeTheme('default')">Tradicional</button>
+                <button class="trigger-btn" onclick="changeTheme('esportes')">Esportes</button>
+                <button class="trigger-btn" onclick="changeTheme('fitness')">Fitness</button>
+                <button class="trigger-btn" onclick="changeTheme('lazer')">Lazer</button>
+            </div>
+            <div class="nav-spacer"></div> </div>
+    </nav>
+
+    <main id="hero">
+        <div class="hero-content">
+            <h1 id="main-title">Red Bull te dá asas.</h1>
+            <p id="main-description">O clássico que você já conhece, para qualquer hora do dia e qualquer desafio.</p>
+            <button class="cta-button">Compre Agora</button>
+        </div>
+        <div class="hero-image">
+            <img id="product-img" src="https://www.redbull.com/energydrink/v1/resources/content/products/br/energy-drink/can-front.png" alt="Red Bull Can">
+        </div>
+    </main>
+
+    <section class="benefits-section">
+        <div class="benefit-card">
+            <div class="icon">⚡</div>
+            <h3>Cafeína</h3>
+            <p>Aumenta a vigilância e contribui para a melhora da concentração.</p>
+        </div>
+        <div class="benefit-card">
+            <div class="icon">🧠</div>
+            <h3>Taurina</h3>
+            <p>Um aminoácido natural que suporta funções biológicas vitais.</p>
+        </div>
+        <div class="benefit-card">
+            <div class="icon">🏔️</div>
+            <h3>Água Alpina</h3>
+            <p>Extraída diretamente de fontes de altíssima qualidade nas montanhas.</p>
+        </div>
+    </section>
+
+    <section id="product-grid">
+        <div class="grid-container" id="grid-container"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

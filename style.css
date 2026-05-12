@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap');
+
+:root {
+    --bg-color: #0b1b3f;
+    --accent-color: #ffcc00;
+    --glass: rgba(255, 255, 255, 0.05);
+    --transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.theme-esportes { --bg-color: #8e2400; --accent-color: #ffab40; }
+.theme-fitness { --bg-color: #1b5e20; --accent-color: #00e676; }
+.theme-lazer { --bg-color: #4a148c; --accent-color: #ea80fc; }
+.theme-default { --bg-color: #0b1b3f; --accent-color: #ffcc00; }
+
+body {
+    background-color: var(--bg-color);
+    color: #fff;
+    font-family: 'Inter', sans-serif; /* Fonte mais natural e moderna */
+    margin: 0;
+    transition: background-color var(--transition);
+    padding-top: 100px;
+}
+
+/* Video Background */
+.video-background {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -2;
+}
+
+#bg-video {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.15;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--bg-color));
+}
+
+/* Menu Superior Refinado */
+.trigger-menu {
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(25px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linha mais sutil */
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Limita a largura para os botões não sumirem */
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.logo-text { font-weight: 900; font-size: 1.3rem; letter-spacing: 2px; }
+
+.buttons { 
+    display: flex; 
+    gap: 8px; 
+    background: rgba(255,255,255,0.05);
+    padding: 5px;
+    border-radius: 12px;
+}
+
+.trigger-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.7);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.trigger-btn:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+/* Botão em destaque no tema atual seria legal, mas vamos focar no brilho da borda do menu */
+.trigger-menu {
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Hero Section */
+#hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 60px 8%;
+    min-height: 70vh;
+}
+
+h1 { font-size: 4rem; text-transform: uppercase; font-weight: 900; line-height: 0.9; }
+p { opacity: 0.7; margin: 25px 0; max-width: 450px; font-weight: 300; }
+
+.cta-button {
+    background: var(--accent-color);
+    color: #000; border: none; padding: 18px 45px;
+    font-weight: 700; border-radius: 50px; cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+#product-img {
+    max-height: 480px;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Benefícios */
+.benefits-section {
+    display: flex; gap: 25px; padding: 80px 8%;
+}
+
+.benefit-card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    padding: 30px; border-radius: 20px; text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    flex: 1;
+}
+
+#product-img {
+    max-height: 550px; /* Aumentado para valorizar a arte do poster */
+    width: auto;
+    border-radius: 15px; /* Um leve arredondamento fica elegante */
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+    animation: float 5s ease-in-out infinite;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    #hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    #product-img {
+        max-height: 400px;
+        margin-top: 20px;
+    }
+}
